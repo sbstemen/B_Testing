@@ -1,0 +1,13 @@
+C:\00_SBSCCDOX\04_WOZ_Practice_Code\NuUnItTsT\NuUnItTsT\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\00_SBSCCDOX\04_WOZ_Practice_Code\NuUnItTsT\NuUnItTsT\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\00_SBSCCDOX\04_WOZ_Practice_Code\NuUnItTsT\NuUnItTsT\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\00_SBSCCDOX\04_WOZ_Practice_Code\NuUnItTsT\NuUnItTsT\bin\Debug\NuUnItTsT.dll
+C:\00_SBSCCDOX\04_WOZ_Practice_Code\NuUnItTsT\NuUnItTsT\bin\Debug\NuUnItTsT.pdb
+C:\00_SBSCCDOX\04_WOZ_Practice_Code\NuUnItTsT\NuUnItTsT\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\00_SBSCCDOX\04_WOZ_Practice_Code\NuUnItTsT\NuUnItTsT\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\00_SBSCCDOX\04_WOZ_Practice_Code\NuUnItTsT\NuUnItTsT\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\00_SBSCCDOX\04_WOZ_Practice_Code\NuUnItTsT\NuUnItTsT\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\00_SBSCCDOX\04_WOZ_Practice_Code\NuUnItTsT\NuUnItTsT\obj\Debug\NuUnItTsTPrj.csproj.CoreCompileInputs.cache
+C:\00_SBSCCDOX\04_WOZ_Practice_Code\NuUnItTsT\NuUnItTsT\obj\Debug\NuUnItTsTPrj.csproj.CopyComplete
+C:\00_SBSCCDOX\04_WOZ_Practice_Code\NuUnItTsT\NuUnItTsT\obj\Debug\NuUnItTsT.dll
+C:\00_SBSCCDOX\04_WOZ_Practice_Code\NuUnItTsT\NuUnItTsT\obj\Debug\NuUnItTsT.pdb

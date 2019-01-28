@@ -1,0 +1,27 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="UploadRepetitive.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CycleCount" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="TestName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Repetitively</Value>
+    </Setting>
+    <Setting Name="UserName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Me</Value>
+    </Setting>
+    <Setting Name="CourseName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">ZQATest23</Value>
+    </Setting>
+    <Setting Name="UserPassWord" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">123456</Value>
+    </Setting>
+    <Setting Name="LogPath" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">C:\ZLogZ\</Value>
+    </Setting>
+    <Setting Name="ClientWOZ" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">https://wozu.qa.exeterlms.com/</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

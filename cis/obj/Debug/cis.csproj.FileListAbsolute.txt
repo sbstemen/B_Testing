@@ -1,0 +1,7 @@
+C:\01~SBSSSDOC\00_BS_GIT\Practice\cis\bin\Debug\cis.exe.config
+C:\01~SBSSSDOC\00_BS_GIT\Practice\cis\bin\Debug\cis.exe
+C:\01~SBSSSDOC\00_BS_GIT\Practice\cis\bin\Debug\cis.pdb
+C:\01~SBSSSDOC\00_BS_GIT\Practice\cis\obj\Debug\cis.csprojAssemblyReference.cache
+C:\01~SBSSSDOC\00_BS_GIT\Practice\cis\obj\Debug\cis.csproj.CoreCompileInputs.cache
+C:\01~SBSSSDOC\00_BS_GIT\Practice\cis\obj\Debug\cis.exe
+C:\01~SBSSSDOC\00_BS_GIT\Practice\cis\obj\Debug\cis.pdb

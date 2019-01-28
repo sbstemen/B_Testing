@@ -1,0 +1,7 @@
+C:\01~SBSSSDOC\00_BS_GIT\Practice\ConnectionStrings\ConStringTest\bin\Debug\ConStringTest.exe.config
+C:\01~SBSSSDOC\00_BS_GIT\Practice\ConnectionStrings\ConStringTest\bin\Debug\ConStringTest.exe
+C:\01~SBSSSDOC\00_BS_GIT\Practice\ConnectionStrings\ConStringTest\bin\Debug\ConStringTest.pdb
+C:\01~SBSSSDOC\00_BS_GIT\Practice\ConnectionStrings\ConStringTest\obj\Debug\ConStringTest.csproj.CoreCompileInputs.cache
+C:\01~SBSSSDOC\00_BS_GIT\Practice\ConnectionStrings\ConStringTest\obj\Debug\ConStringTest.exe
+C:\01~SBSSSDOC\00_BS_GIT\Practice\ConnectionStrings\ConStringTest\obj\Debug\ConStringTest.pdb
+C:\01~SBSSSDOC\00_BS_GIT\Practice\ConnectionStrings\ConStringTest\obj\Debug\ConStringTest.csprojAssemblyReference.cache
