@@ -25,7 +25,7 @@ namespace LottaUpload.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("ScottBS")]
+        [global::System.Configuration.DefaultSettingValueAttribute("FFFF")]
         public string BaseUserNames {
             get {
                 return ((string)(this["BaseUserNames"]));
@@ -47,6 +47,33 @@ namespace LottaUpload.Properties {
         public string ClientUrl {
             get {
                 return ((string)(this["ClientUrl"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3KzipFile.zip")]
+        public string NameOfFile {
+            get {
+                return ((string)(this["NameOfFile"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int UserStartCount {
+            get {
+                return ((int)(this["UserStartCount"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10")]
+        public int UserStopCount {
+            get {
+                return ((int)(this["UserStopCount"]));
             }
         }
     }

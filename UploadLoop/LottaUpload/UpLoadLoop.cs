@@ -23,11 +23,11 @@ namespace LottaUpload
   [TestClass]
   public class UpLoadLoop
   {
-    private static string chromePath = Directory.GetCurrentDirectory() + "\\assets\\";
-    private static string uploadFile = Directory.GetCurrentDirectory() + "\\assets\\TestUpload.zip";
+    private static string assetPath = Directory.GetCurrentDirectory() + "\\assets\\";
+    private static string uploadFile = assetPath + Properties.Settings.Default.NameOfFile;
     private UserData studentData = new UserData();
     private UserData administratorData = new UserData();
-    private HelperUtilities Utils = new HelperUtilities();
+    private HelperUtilities HelperUtilities = new HelperUtilities();
     private UploadProcess Process = new UploadProcess();
 
     [TestInitialize]
@@ -41,16 +41,29 @@ namespace LottaUpload
     [TestMethod]
     public void UploadLoopingTest()
     {
-      int stop = 1;
+      int iterationCount = Properties.Settings.Default.UserStartCount;
       do
       {
-        using (IWebDriver webDriver = new ChromeDriver(chromePath))
+        using (IWebDriver webDriver = new ChromeDriver(assetPath))
         {
-          Process.BrowserReady(webDriver, Utils, studentData);
-          Process.LogInn(webDriver, Utils, studentData);
+          Process.BrowserReady(webDriver, HelperUtilities, studentData);
+
+          Process.LogInn(webDriver, HelperUtilities, studentData, iterationCount);
+
+          Process.OpenCourse(webDriver, HelperUtilities, iterationCount);
+
+          for(int lessonCount = 0; lessonCount < 10; lessonCount++)
+          { 
+            Process.UploadFile(webDriver, HelperUtilities, uploadFile);
+
+            Process.NextLessonPage(webDriver, HelperUtilities, iterationCount, lessonCount);
+          }
+          Process.LogOff(webDriver, HelperUtilities);
         }
 
-      } while (stop < 2);
+        HelperUtilities.RandomPause(1);
+        iterationCount++;
+      } while (iterationCount < Properties.Settings.Default.UserStopCount);
 
     }
   }
