@@ -11,15 +11,10 @@
 namespace LottaUpload
 {
   using AutoIt;
+  using OpenQA.Selenium;
+  using OpenQA.Selenium.Support.UI;
   using System;
   using System.Drawing;
-  using System.IO;
-  using OpenQA.Selenium;
-  using OpenQA.Selenium.Interactions;
-  using OpenQA.Selenium.Support.UI;
-  using SeleniumExtras.WaitHelpers;
-  using SeleniumExtras;
-  using SeleniumExtras.PageObjects;
 
   internal class UploadProcess
   {
@@ -52,6 +47,8 @@ namespace LottaUpload
 
       var element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id("RememberLogin")));
 
+      utils.RandomPause(1);
+
       pageText = webDriver.PageSource;
 
       testPassed = utils.PageIsReady(webDriver, pageText, findThis);
@@ -67,7 +64,6 @@ namespace LottaUpload
 
       return webDriver;
     }
-
 
     public IWebDriver LogInn(IWebDriver webDriver, HelperUtilities utils, UserData usrAccount, int iteration)
     {
@@ -92,6 +88,8 @@ namespace LottaUpload
       var wait = new WebDriverWait(webDriver, new TimeSpan(0, 0, 30));
 
       IWebElement element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.Id("navbar-header")));
+
+      utils.RandomPause(1);
 
       pageText = webDriver.PageSource;
 
@@ -119,12 +117,24 @@ namespace LottaUpload
 
       IWebElement element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.CssSelector("div.col-xs-10.col-xs-offset-1")));
 
+      utils.RandomPause(1);
+
       return webDriver;
     }
 
     public IWebDriver UploadFile(IWebDriver webDriver, HelperUtilities utils, string filePath)
     {
-      webDriver.FindElement(By.CssSelector("div.col-xs-10.col-xs-offset-1")).Click();
+      bool retry = false;
+
+      int retryCount = 0;
+
+      var waitUploadBox = new WebDriverWait(webDriver, new TimeSpan(0, 0, 30));
+
+      IWebElement elementUpLoadBox = waitUploadBox.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.CssSelector("div.col-xs-10.col-xs-offset-1")));
+
+      elementUpLoadBox.Click();
+
+      //webDriver.FindElement(By.CssSelector("div.col-xs-10.col-xs-offset-1")).Click();
 
       utils.RandomPause(1);
 
@@ -138,33 +148,68 @@ namespace LottaUpload
 
       utils.RandomPause(1);
 
-      string tempCssSelector = "div.row div.col-xs-10.col-xs-offset-1 div div div.display.inline-block > button";
+      do
+      {
 
-      var wait = new WebDriverWait(webDriver, new TimeSpan(0, 0, 180));  // YES! REALLY 180 seconds to test for a 200 meg upload
+        try
+        {
+          string tempCssSelector = "div.row div.col-xs-10.col-xs-offset-1 div div div.display.inline-block > button";
 
-      IWebElement element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.CssSelector(tempCssSelector)));
+          var waitUploadDone = new WebDriverWait(webDriver, new TimeSpan(0, 0, 180));  // YES! REALLY 180 seconds to test for a 200 meg upload
+
+          IWebElement elementUploadDone = waitUploadDone.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.CssSelector(tempCssSelector)));
+
+          utils.RandomPause(1);
+
+          IJavaScriptExecutor pageScroll = webDriver as IJavaScriptExecutor;
+
+          pageScroll.ExecuteScript("window.scrollBy(0,150);");
+
+          var submitButton = webDriver.FindElements(By.CssSelector("div.row div.col-xs-10.col-xs-offset-1 div button"));
+
+          submitButton[1].Click();
+
+          utils.RandomPause(2);
+
+          var confirmSubmit = webDriver.FindElements(By.CssSelector("div.modal-footer > button"));
+
+          ((IJavaScriptExecutor)webDriver).ExecuteScript("arguments[0].scrollIntoView(true);", confirmSubmit[1]);
+
+          confirmSubmit[1].Click();
+
+          retry = true;
+
+        }
+        catch (Exception exText)
+        {
+
+          Console.WriteLine(exText);
+
+          string redXclass = "fa.fa-times.fa-2x.color.red";
+          var redXvisable = webDriver.FindElement(By.ClassName(redXclass));
+          var wait = new WebDriverWait(webDriver, new TimeSpan(0, 0, 180));  // YES! REALLY 180 seconds to test for a 200 meg upload
+          IWebElement element = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.ClassName(redXclass)));
+          utils.RandomPause(1);
+          var removeButton = webDriver.FindElements(By.CssSelector("div.row div.col-xs-10.col-xs-offset-1 div button"));
+          removeButton[1].Click();
+          utils.RandomPause(1);
+
+          retryCount++;
+          if (retryCount > 2)
+          {
+            Environment.Exit(1);
+          }
+
+        }
+
+      } while (!retry);
 
       return webDriver;
     }
 
-    public IWebDriver NextLessonPage(IWebDriver webDriver, HelperUtilities utils, int iteration, int lesson)
+    public IWebDriver NextLessonPage(IWebDriver webDriver, HelperUtilities utils, int iteration, int lessonCountIs, int lessonsInCourse)
     {
-
-      IJavaScriptExecutor pageScroll = webDriver as IJavaScriptExecutor;
-
-      pageScroll.ExecuteScript("window.scrollBy(0,150);");
-
-      var pickSubmitButton = webDriver.FindElements(By.CssSelector("div.row div.col-xs-10.col-xs-offset-1 div button"));
-
-      pickSubmitButton[1].Click();
-
-      utils.RandomPause(1);
-
-      var findPoint = webDriver.FindElements(By.CssSelector("div[style=\"display: block;\"].modal button"));
-
-      ((IJavaScriptExecutor)webDriver).ExecuteScript("arguments[0].scrollIntoView(true);", findPoint[0]);
-      
-      findPoint[2].Click();
+      utils.RandomPause(2);
 
       string searchForText = "Processing file(s) for download";
 
@@ -174,17 +219,17 @@ namespace LottaUpload
 
       webDriver.FindElement(By.Id("nextLessonBtn")).Click();
 
-
-      if (lesson < 9)
-        {
+      if (lessonCountIs < lessonsInCourse-1)
+      {
           var wait = new WebDriverWait(webDriver, new TimeSpan(0, 0, 60));
           IWebElement elementNewTopicLesson = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(By.CssSelector("div.col-xs-10.col-xs-offset-1")));
-        }
-        else
-        {
+          utils.RandomPause(1);
+      }
+      else
+      {
           utils.RandomPause(2);
           return webDriver;
-        }
+      }
 
       return webDriver;
     }

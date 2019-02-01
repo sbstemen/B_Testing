@@ -9,22 +9,18 @@
 
 namespace LottaUpload
 {
-  using System;
-  using System.IO;
+  using Microsoft.VisualStudio.TestTools.UnitTesting;
   using OpenQA.Selenium;
   using OpenQA.Selenium.Chrome;
-  using OpenQA.Selenium.Interactions;
-  using SeleniumExtras;
-  using SeleniumExtras.PageObjects;
-  using SeleniumExtras.WaitHelpers;
-  using Microsoft.VisualStudio.TestTools.UnitTesting;
-  using Microsoft.VisualStudio.TestTools;
-  
+  using System.IO;
+
   [TestClass]
   public class UpLoadLoop
   {
     private static string assetPath = Directory.GetCurrentDirectory() + "\\assets\\";
     private static string uploadFile = assetPath + Properties.Settings.Default.NameOfFile;
+    private static int stopCount = Properties.Settings.Default.UserStopCount;
+    private static int lessonsInCourse = Properties.Settings.Default.LessonsInCourse;
     private UserData studentData = new UserData();
     private UserData administratorData = new UserData();
     private HelperUtilities HelperUtilities = new HelperUtilities();
@@ -56,14 +52,14 @@ namespace LottaUpload
           { 
             Process.UploadFile(webDriver, HelperUtilities, uploadFile);
 
-            Process.NextLessonPage(webDriver, HelperUtilities, iterationCount, lessonCount);
+            Process.NextLessonPage(webDriver, HelperUtilities, iterationCount, lessonCount, lessonsInCourse);
           }
           Process.LogOff(webDriver, HelperUtilities);
         }
 
         HelperUtilities.RandomPause(1);
         iterationCount++;
-      } while (iterationCount < Properties.Settings.Default.UserStopCount);
+      } while (iterationCount < stopCount);
 
     }
   }
