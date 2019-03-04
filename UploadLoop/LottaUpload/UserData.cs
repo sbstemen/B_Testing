@@ -1,11 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+﻿// *************************************************************
+// Coder Camps
+// 8444 N. 90th Street St. 110
+// Scottsdale, AZ
+// -- SBS ~ 20180830
+// Copyright (c) 2016-18
+// Project: Runs through the repetitive upload test course
+// *************************************************************
 namespace LottaUpload
 {
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
+  using System.Text;
+  using System.Threading.Tasks;
+
   public class UserData
   {
     public string FirstName { get; set; }

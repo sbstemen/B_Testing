@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="BaseUserNames" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">DEE</Value>
+      <Value Profile="(Default)">DEF</Value>
     </Setting>
     <Setting Name="Password" Type="System.String" Scope="Application">
       <Value Profile="(Default)">123456</Value>
@@ -12,13 +12,13 @@
       <Value Profile="(Default)">https://wozu.qa.exeterlms.com/</Value>
     </Setting>
     <Setting Name="NameOfFile" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">40MegaBytesFile.zip</Value>
+      <Value Profile="(Default)">138KzipFile.zip</Value>
     </Setting>
     <Setting Name="UserStartCount" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="UserStopCount" Type="System.Int32" Scope="Application">
-      <Value Profile="(Default)">10</Value>
+      <Value Profile="(Default)">5</Value>
     </Setting>
     <Setting Name="LessonsInCourse" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">10</Value>
