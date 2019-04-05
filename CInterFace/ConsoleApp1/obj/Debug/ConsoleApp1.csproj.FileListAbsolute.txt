@@ -5,3 +5,10 @@ C:\01~SBSSSDOC\00_BS_GIT\Practice\CInterFace\ConsoleApp1\obj\Debug\ConsoleApp1.c
 C:\01~SBSSSDOC\00_BS_GIT\Practice\CInterFace\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
 C:\01~SBSSSDOC\00_BS_GIT\Practice\CInterFace\ConsoleApp1\obj\Debug\ConsoleApp1.exe
 C:\01~SBSSSDOC\00_BS_GIT\Practice\CInterFace\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
+C:\SSGitCodeSwap\Running_Ran\CInterFace\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+C:\SSGitCodeSwap\Running_Ran\CInterFace\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+C:\SSGitCodeSwap\Running_Ran\CInterFace\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+C:\SSGitCodeSwap\Running_Ran\CInterFace\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
+C:\SSGitCodeSwap\Running_Ran\CInterFace\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\SSGitCodeSwap\Running_Ran\CInterFace\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+C:\SSGitCodeSwap\Running_Ran\CInterFace\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
